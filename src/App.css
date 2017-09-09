@@ -3,22 +3,17 @@
 }
 
 .App-logo {
-  width: 300px;
-  height: 136px;
+  width: 260px;
+  height: 118px;
 }
 
 .App-header {
   background-color: #fff;
-  height: 200px;
-  padding: 30px 20px;
+  height: 160px;
+  padding: 20px 20px;
   color: #D2D2D2;
 }
 
 .App-intro {
   font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

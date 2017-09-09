@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 
-import logo from './logo.png';
+// Styles
 import './App.css';
+// Assets
+import logo from './logo.png';
+// Components
+import AppNav from './AppNav.js';
 
 class App extends Component {
   render() {
@@ -11,9 +15,12 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>React Apollo Client</h2>
         </div>
+
         <p className="App-intro">
-          GraphQL
+          GraphQL Walkthrough
         </p>
+
+        <AppNav />
       </div>
     );
   }
