@@ -1,21 +1,21 @@
-.AppNav ul {
+.App-menu ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
-.AppNav ul li {
+.App-menu ul li {
   display: inline;
 }
 
-.AppNav ul li a {
+.App-menu ul li a {
   color: #ff0370;
   text-decoration: none;
   padding: 0px;
   margin: 10px;
 }
 
-.AppNav ul li a:hover {
+App-menu ul li a:hover {
   color: #23527c
 }

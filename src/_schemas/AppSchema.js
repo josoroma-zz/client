@@ -1,7 +1,8 @@
 export const typeDefs = `
   type Menu {
     id: ID!
-    name: String
+    name: String!
+    route: String!
   }
 
   type Query {
