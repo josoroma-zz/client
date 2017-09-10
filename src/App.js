@@ -5,14 +5,14 @@ import './App.css';
 
 import {ApolloProvider} from 'react-apollo';
 
-import AppClient from './_config/AppClient';
+import AppGraphQLClient from './_config/AppGraphQLClient';
 
 import AppMenu from './components/AppMenu';
 
 class App extends Component {
   render() {
     return (
-      <ApolloProvider client={AppClient}>
+      <ApolloProvider client={AppGraphQLClient}>
         <div className="App">
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />

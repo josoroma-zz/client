@@ -9,7 +9,7 @@ import {
 
 const AppMenuQuery = gql`
   query AppMenuQuery {
-    options {
+    menus {
       id
       name
       route
@@ -17,7 +17,7 @@ const AppMenuQuery = gql`
   }
 `;
 
-const AppMenu = ({ data: {loading, error, options }}) => {
+const AppMenuComponent = ({ data: {loading, error, menus }}) => {
   if (loading) {
     return <p>Loading ...</p>;
   }
@@ -30,10 +30,10 @@ const AppMenu = ({ data: {loading, error, options }}) => {
     <div className="App-menu">
       <ul>
         {
-          options.map(
-            option => (
-              <li key={option.id} className={'option ' + (option.id < 0 ? 'optimistic' : '')}>
-                <a href="/{option.route}">{option.name}</a>
+          menus.map(
+            menu => (
+              <li key={menu.id} className="App-menu-option">
+                <a href="/{menu.route}">{menu.name}</a>
               </li>
             )
           )
@@ -43,6 +43,8 @@ const AppMenu = ({ data: {loading, error, options }}) => {
   );
 };
 
-export default graphql(AppMenuQuery, {
-  options: { pollInterval: 5000 },
-})(AppMenu);
+const AppMenu = graphql(AppMenuQuery, {
+  options: { pollInterval: 5000 }
+})(AppMenuComponent);
+
+export default AppMenu;
