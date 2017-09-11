@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 
 import logo from './_assets/logo.png';
-import './App.css';
+
+import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
+import Card, { CardContent } from 'material-ui/Card';
+import Typography from 'material-ui/Typography';
 
 import {ApolloProvider} from 'react-apollo';
 
@@ -17,26 +21,45 @@ import Posts from './components/Posts';
 import Post from './components/Post';
 import NotFound from './components/NotFound';
 
+import './App.css';
+import styles from './App.ui.css';
+
 class App extends Component {
+  static propTypes = {
+    classes: PropTypes.object.isRequired
+  };
+
+  static defaultProp = {
+    classes: []
+  };
+
   render() {
+    const { classes } = this.props;
+
     return (
-      <ApolloProvider client={AppGraphQLClient}>
+      <ApolloProvider client={ AppGraphQLClient }>
         <BrowserRouter>
           <div className="App">
-            <div className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <h2>React Apollo Client</h2>
-            </div>
+            <Card className={ classes.card }>
+              <CardContent>
+                <div className="App-header">
+                  <img src={ logo } className="App-logo" alt="logo"/>
+                </div>
 
-            <p className="App-intro">
-              GraphQL Walkthrough
-            </p>
+                <Typography type="body1" className={ classes.title }>
+                  React Apollo Client
+                </Typography>
+                <Typography type="headline" component="h2">
+                  GraphQL Walkthrough
+                </Typography>
 
-            <Switch>
-              <Route exact path="/" component={Posts}/>
-              <Route path="/post/:postId" component={Post}/>
-              <Route component={ NotFound }/>
-            </Switch>
+                <Switch>
+                  <Route exact path="/" component={ Posts }/>
+                  <Route path="/post/:id" component={ Post }/>
+                  <Route component={ NotFound }/>
+                </Switch>
+              </CardContent>
+            </Card>
           </div>
         </BrowserRouter>
       </ApolloProvider>
@@ -44,4 +67,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withStyles(styles)(App);

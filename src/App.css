@@ -1,20 +1,2 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  width: 260px;
-  height: 118px;
-}
-
-.App-header {
-  background-color: #fff;
-  height: 160px;
-  padding: 20px 20px;
-  color: #D2D2D2;
-}
-
-.App-intro {
-  font-size: large;
-}
-
+/* Custom CSS code for non material-ui theme related components */

@@ -17,7 +17,7 @@ const Post = ({ data: { loading, error, post }, match }) => {
   }
 
   if (error) {
-    return <p>{error.message}</p>;
+    return <p>{ error.message }</p>;
   }
 
   if (post === null) {
@@ -27,7 +27,7 @@ const Post = ({ data: { loading, error, post }, match }) => {
   return (
     <div className="Post">
       <div className="Post-name">
-        <h2>{post.title}</h2>
+        <h2>{ post.title }</h2>
       </div>
 
       <Link to="/">Back</Link>
@@ -36,8 +36,8 @@ const Post = ({ data: { loading, error, post }, match }) => {
 }
 
 export const PostQuery = gql`
-  query PostQuery($postId : ID!) {
-    post(id: $postId) {
+  query PostQuery($id : ID!) {
+    post(id: $id) {
       id
       title
     }
@@ -47,7 +47,7 @@ export const PostQuery = gql`
 export default (graphql(PostQuery, {
   options: (props) => ({
     variables: {
-      postId: props.match.params.postId
+      id: props.match.params.id
     }
   }),
 })(Post));

@@ -36,3 +36,41 @@ yarn add react-apollo apollo-client graphql-tag graphql-tools apollo-test-utils
 ```
 yarn add react-router-dom
 ```
+
+## UI
+
+ * https://material-ui-1dab0.firebaseapp.com/getting-started/installation
+
+```
+yarn add material-ui@next material-ui-icons
+```
+
+Please note that @next will only point to pre-releases; to get the latest stable release use @latest instead.
+
+### static propTypes
+
+```
+static propTypes = {
+  classes: PropTypes.object.isRequired
+};
+
+static defaultProp = {
+  classes: []
+};
+```
+
+### App.propTypes
+
+Class:
+
+```
+App.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+
+HOC:
+
+App.defaultProps = {
+  status: "Main App"
+};
+```

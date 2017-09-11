@@ -28,9 +28,14 @@ const AppGraphQLClient = new ApolloClient({
   customResolvers: {
     Query: {
       post: (_, args) => {
-        return toIdValue(dataIdFromObject({ __typename: 'Post', id: args['id'] }))
-      },
-    },
+        return toIdValue(
+          dataIdFromObject({
+            __typename: 'Post',
+            id: args['id']
+          })
+        )
+      }
+    }
   },
   dataIdFromObject
 });
